@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title>My Digital Clock</title>
+    </head>
+
+    <style>
+        body
+        {
+            background-color: black;
+        }
+
+        .myclock
+        {
+            color: aliceblue;
+            font-size: 80px;
+            margin-left: 23%;
+            margin-top: 20%;
+            font-family: 'Courier New', Courier, monospace;
+        }
+    
+    </style>
+
+
+    <body>
+
+        <div id="MyClock" class="myclock"> </div>
+        <script>
+            function digital_clock()
+            {     
+            var rightNow = new Date();
+            var h = rightNow.getHours();
+            var m = rightNow.getMinutes(); 
+            var s = rightNow.getSeconds();
+            var session = 'AM';
+            
+            if (h> 12)
+            {
+                h=h-12;
+                session='PM';
+            }
+            var time = h + " : " + m + " : " + s + " " + session;
+            document.getElementById("MyClock").innerHTML = time;
+            
+            }
+            
+ //           digital_clock();
+            setInterval(digital_clock, 1000);
+            
+         
+             </script>
+    </body>
+</html>
+
